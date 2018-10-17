@@ -1,12 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <div class="top-nav-bar">
+    <ion-tabs name="top-bar" tabsPlacement="top" selectedIndex="2" tabsHighlight>
+      <ion-tab tabTitle="Claims" [root]="claims">Claims</ion-tab>
+      <ion-tab tabTitle="History" [root]="history">History</ion-tab>
+    </ion-tabs>
+  </div>
 </ion-content>
