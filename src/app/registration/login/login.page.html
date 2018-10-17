@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-nav>
+	  <ion-title>
+	    <p class="page-title">Travel And Expense</p>
+	  </ion-title>
+	</ion-nav>
+</ion-header>
+
+<ion-content padding>
+	<div class="login-container">
+	  <ion-list>
+	      <p>Please login to access </p>
+	    <ion-item>
+	      <ion-input type="email" placeholder="Email" [(ngModel)]="loginForm.email" required #mail="ngModel"></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-input type="password" placeholder="Password" minlength="8" [(ngModel)]="loginForm.Password" required #password="ngModel" ></ion-input>
+	    </ion-item>
+	      <!-- <button ion-button color="grey" [disabled]="password.invalid " (click)="signIn();" block>Login</button> -->
+	      <ion-button color="primary" [disabled]="password.invalid " (click)="signIn();" expand="block">LOGIN</ion-button>
+	  </ion-list>
+	</div>
+</ion-content>
+  
