@@ -1,0 +1,7 @@
+{
+  "name": "travelandexpense",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
