@@ -1,0 +1,21 @@
+<ion-content padding>
+    <div class="top-nav-bar">
+            <ion-tabs name="top-bar" tabsPlacement="top" selectedIndex="2" tabsHighlight>
+                <ion-tab label="Claims" href="/app/tabs/(schedule:schedule)">
+                    <ion-router-outlet stack name="Claims"></ion-router-outlet>
+                </ion-tab>
+                <ion-tab label="History" icon="information-circle" href="/app/tabs/(about:about)">
+                    <ion-router-outlet stack name="History"></ion-router-outlet>
+                </ion-tab>
+            </ion-tabs>
+    
+        <ion-tabs name="top-bar" tabsPlacement="top" selectedIndex="2" tabsHighlight>
+            <ion-tab tabTitle="Claims">Claims</ion-tab>
+            <ion-tab tabTitle="History">History</ion-tab>
+        </ion-tabs>
+        <ion-button color="primary" (click)="redirectToClaims();" block>Rediect to Claims</ion-button>
+
+        
+    </div>
+
+ </ion-content>

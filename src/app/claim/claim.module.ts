@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core' ;
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import {FormsModule} from '@angular/forms';
 
 // Page imports
@@ -38,7 +39,7 @@ import { ClaimHistoryPage } from './claim-history/claim-history.page'
     declarations : [
         ClaimRequestPage,
         ClaimDetailsPage,
-        ClaimHistoryPage
+        ClaimHistoryPage,
     ]
 })
 

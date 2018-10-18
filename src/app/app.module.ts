@@ -9,6 +9,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment'; // Configuration of Google firebase
 
+import { Camera } from '@ionic-native/camera/ngx';
+import { Observable } from 'rxjs/Observable';
+
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -26,11 +29,12 @@ import { AppRoutingModule } from './app-routing.module';
     	AngularFirestoreModule,
     	AngularFireStorageModule,
   		IonicModule.forRoot(),
-  		AppRoutingModule
+		AppRoutingModule,
   	],
   	providers: [
 	    StatusBar,
-	    SplashScreen,
+		SplashScreen,
+		Camera,
 	    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   	],
   	bootstrap: [AppComponent]

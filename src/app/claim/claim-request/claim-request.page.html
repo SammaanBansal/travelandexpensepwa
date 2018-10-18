@@ -1,1 +1,53 @@
-hEllo request
+<ion-content>
+    <div class="container">
+      <p>Please fill the form below to raise a request for claim.</p>
+      <form>
+          <ion-list>
+            <ion-item>
+              <ion-input type="text" placeholder="Expense Title" name="ExpTitle" [(ngModel)]="claimForm.ExpTitle" required #expTitle="ngModel"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Description" name="Description" [(ngModel)]="claimForm.Description" required #desc="ngModel"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Start Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" name="startDate" [(ngModel)]="claimForm.startDate" #strtdate="ngModel" required></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label>End Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" name="endDate" [(ngModel)]="claimForm.endDate" #enddate="ngModel" required></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label>Category</ion-label>
+              <ion-select name="category" [(ngModel)]="claimForm.category" #category="ngModel" required>
+                <ion-select-option value="FOOD">Food</ion-select-option>
+                <ion-select-option value="TRAVEL">Travel</ion-select-option>
+                <ion-select-option value="ACCOMODATION">Accomodation</ion-select-option>
+                <ion-select-option value="OTHER">Other</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" placeholder="Total Amount" name="Amount" [(ngModel)]="claimForm.Amount" required #amount="ngModel"></ion-input>
+            </ion-item>   
+            <ion-item>
+                <ion-label >Upload expense reciepts</ion-label>
+                <!-- <ion-input type="file" name="pic" accept="image/*"> -->
+            </ion-item> 
+            
+
+            <ion-button class="cta" color="light" (click)="clickImage();" >Click</ion-button>
+            <ion-button class="cta" color="light" (click)="uploadImage();">Upload</ion-button>
+            
+            <div>{{ uploadPercent | async }}</div>
+            <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+
+            <div class="reciept-images" align="center" *ngFor="let reciept of reciepts;let i=index">
+              {{reciept.name}}<br> {{i}}<br> {{reciept.imageData}}<br>
+              <img src="{{reciept.imageData}}" alt="RECIEPT"/>
+            </div>
+            
+            <ion-button color="primary" [disabled]="expTitle.pristine || desc.pristine || strtdate.pristine || enddate.pristine && category.pristine && amount.pristine" (click)="showConfirm();" block>Submit</ion-button>
+          </ion-list>  
+      </form>
+    </div>
+  </ion-content>
